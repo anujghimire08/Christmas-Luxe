@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?size=25&duration=2500&pause=1200&center=true&vCenter=true&width=750&lines=ChristmasLuxe+Shop+UI;Premium+Holiday+Decor;HTML+%2F+CSS+%2F+JS;Responsive+Front-End;Festive+Shopping+Experience&color=60181c&vCenter=true">
+  <img src="https://readme-typing-svg.herokuapp.com?size=35&duration=2500&pause=1200&center=true&vCenter=true&width=750&lines=ChristmasLuxe+Shop+UI;Premium+Holiday+Decor;HTML+%2F+CSS;Responsive+Front-End;Festive+Shopping+Experience&color=FF0000&vCenter=true">
 </p>
 
 # Christmas Luxe – Christmas shop UI
