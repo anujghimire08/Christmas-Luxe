@@ -266,6 +266,10 @@ footer h3 {
   margin-right: 10px;
   cursor: pointer;
 }
+#copyright a {
+  text-decoration: none;
+  color: #60181c;
+}
 @media (max-width: 800px) {
   nav {
     display: none;
@@ -320,8 +324,12 @@ footer h3 {
   h2 {
     font-size: 3vw;
   }
-  footer h3 {
+  footer h3,
+  #copyright a {
     font-size: 2.5vw;
+  }
+  .owner h3 {
+    font-size: 2vw;
   }
   .org-details {
     gap: 1vw;
