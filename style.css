@@ -67,23 +67,100 @@ main {
 }
 main #banner-img {
   width: 100%;
+  cursor: pointer;
 }
 main #banner-img img {
   width: 100%;
 }
 .product-section {
   display: flex;
-}
-.product-section img {
-  width: 500px;
-}
-/* .tree {
-}
-h5 {
-  display: inline-block;
-  background-color: red;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  gap: 2vw;
+  height: auto;
   width: 100%;
-} */
+  padding: 2vw 0;
+}
+.product {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 45%;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.product-img img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: center;
+}
+.product h5 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10%;
+  width: 100%;
+  font-size: 2vw;
+  font-weight: 500;
+  margin-top: -5px;
+  line-height: 1.2;
+}
+.product h5:hover {
+  background-color: #60181c;
+  color: white;
+}
+.product-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2vw;
+  padding-bottom: 2vw;
+}
+.product-cart .items {
+  width: 22vw;
+}
+.items img {
+  width: 100%;
+}
+.cart-footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1vw;
+}
+.items:hover {
+  background-color: #60181c;
+  color: white;
+  .icons-btn {
+    background-color: white;
+  }
+  .icon {
+    color: #60181c;
+  }
+}
+.icons-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #60181c;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+.icon {
+  display: block;
+  font-size: 1.2rem;
+  color: white;
+}
 @media (max-width: 800px) {
   nav {
     display: none;
@@ -98,5 +175,22 @@ h5 {
     display: block;
     font-size: 8vw;
     font-weight: 600;
+  }
+  .product {
+    width: 90%;
+  }
+  .product-section {
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 4vw;
+  }
+  .product-img img {
+    width: 90vw;
+    height: auto;
+  }
+  .product h5 {
+    font-size: 5vw;
   }
 }
