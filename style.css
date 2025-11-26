@@ -9,16 +9,17 @@ body,
 html {
   width: 100%;
   height: 100%;
+  background-color: white;
   font-family: "Prompt", sans-serif;
 }
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: white;
   height: 70px;
   width: 100%;
   padding: 1vw 2vw;
-  background-color: white;
   border-bottom: 2px solid black;
   position: sticky;
   top: 0;
@@ -63,7 +64,6 @@ i {
   display: none;
 }
 main {
-  height: calc(100% - 70px);
   width: 100%;
 }
 main #banner-img {
@@ -72,8 +72,9 @@ main #banner-img {
 }
 main #banner-img img {
   width: 100%;
+  object-fit: cover;
 }
-.product-section {
+/* .product-section {
   display: flex;
   justify-content: center;
   text-align: center;
@@ -81,17 +82,15 @@ main #banner-img img {
   gap: 2vw;
   height: auto;
   width: 100%;
-  padding: 2vw 0;
+  margin-bottom: 10px;
 }
 .product {
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
   width: 48vw;
   height: auto;
   background-color: white;
-  border-radius: 8px;
   overflow: hidden;
   cursor: pointer;
 }
@@ -101,20 +100,48 @@ main #banner-img img {
   object-fit: cover;
   object-position: center;
 }
-.product h5 {
+.product-name {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 10%;
+  height: 15%;
   width: 100%;
   font-size: 2vw;
   font-weight: 500;
   margin-top: -7px;
   line-height: 1.2;
+  background-color: red;
 }
-.product h5:hover {
+.product-name:hover {
   background-color: #60181c;
   color: white;
+} */
+
+.discount-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1vw;
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+.cart {
+  padding: 1vw;
+  text-align: center;
+  width: calc(100% / 4);
+}
+.cart h6 {
+  font-size: 1.3vw;
+  color: #60181c;
+}
+.cart img {
+  width: 100%;
+}
+.cart img:hover,
+.payment img:hover {
+  cursor: pointer;
+  transform: scale(0.98);
 }
 .product-cart {
   display: flex;
@@ -128,7 +155,6 @@ main #banner-img img {
   width: 23vw;
   height: auto;
 }
-
 .items img {
   width: 100%;
 }
@@ -175,6 +201,71 @@ main #banner-img img {
 #product-price {
   font-size: 1.5vw;
 }
+h2 {
+  text-align: center;
+  margin: 20px 0px 20px 0px;
+  color: #60181c;
+}
+footer {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0px 30px 0px;
+}
+.org-details {
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 2vw;
+  padding: 1.5vw 1vw 1vw 1vw;
+  border-top: 4px solid #60181c;
+  border-bottom: 4px solid #60181c;
+}
+.footer-logo img {
+  width: 15vw;
+}
+.footer-logo,
+.about,
+.customer-service,
+.social-media {
+  width: 25vw;
+  display: flex;
+  flex-direction: column;
+}
+.footer-logo {
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+footer h3 {
+  color: #60181c;
+}
+.customer-service ul,
+.social-media ul {
+  list-style: none;
+}
+.customer-service a,
+.social-media a {
+  text-decoration: none;
+  color: black;
+}
+.org-claim {
+  padding: 1.5vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2vw;
+}
+.payment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.payment img {
+  width: 60px;
+  margin-right: 10px;
+  cursor: pointer;
+}
 @media (max-width: 800px) {
   nav {
     display: none;
@@ -191,7 +282,11 @@ main #banner-img img {
     font-weight: 600;
   }
   .product {
-    width: 100%;
+    width: 98vw;
+    height: 250px;
+  }
+  .product-img {
+    width: 98vw;
   }
   .product-section {
     justify-content: center;
@@ -199,9 +294,10 @@ main #banner-img img {
     flex-wrap: wrap;
     flex-direction: column;
     gap: 4vw;
+    width: 100%;
   }
   .product-img img {
-    width: 95vw;
+    width: 100%;
     height: auto;
   }
   .product h5 {
@@ -220,5 +316,31 @@ main #banner-img img {
   }
   .icon {
     font-size: 2vw;
+  }
+  h2 {
+    font-size: 3vw;
+  }
+  footer h3 {
+    font-size: 2.5vw;
+  }
+  .org-details {
+    gap: 1vw;
+  }
+  .about p {
+    font-size: 2vw;
+  }
+  .customer-service li,
+  .social-media li {
+    font-size: 2vw;
+  }
+  .footer-logo img {
+    width: 25vw;
+  }
+  .org-claim h3 {
+    font-size: 3vw;
+  }
+  .payment img {
+    width: 10vw;
+    margin-right: 5px;
   }
 }
