@@ -25,6 +25,7 @@ header {
   top: 0;
   left: 0;
   right: 0;
+  position: relative;
 }
 header img {
   width: 5.5vw;
@@ -60,8 +61,16 @@ nav h3:hover {
   border-radius: 2px;
   cursor: pointer;
 }
-i {
+.toggle-bars {
+  background-color: transparent;
   display: none;
+}
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: #60181c;
 }
 main {
   width: 100%;
@@ -273,6 +282,41 @@ footer h3 {
 @media (max-width: 800px) {
   nav {
     display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    width: 150px;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    padding-top: 5rem;
+    padding-left: 2rem;
+  }
+  nav h3 {
+    font-size: 4vw;
+    color: black;
+  }
+  .toggle-bars {
+    display: block;
+    z-index: 1000;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  nav.active {
+    display: flex;
+  }
+  .toggle-bars.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .toggle-bars.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .toggle-bars.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
   }
   header img {
     width: 15vw;
@@ -280,11 +324,11 @@ footer h3 {
   #signup {
     display: none;
   }
-  i {
+  .toggle-bars {
     display: block;
-    font-size: 8vw;
-    font-weight: 600;
+    margin-right: 10px;
   }
+
   .product {
     width: 98vw;
     height: 250px;
