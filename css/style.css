@@ -28,7 +28,7 @@ header {
   position: relative;
 }
 header img {
-  width: 5.5vw;
+  width: 5.2vw;
 }
 header #signup {
   padding: 1vw 3vw;
@@ -36,7 +36,7 @@ header #signup {
   border-radius: 6px;
   background-color: #60181c;
   color: white;
-  font-size: 1.5vw;
+  font-size: 1.4vw;
   font-weight: 550;
 }
 header #signup:hover {
@@ -53,7 +53,7 @@ nav {
   gap: 3vw;
 }
 nav h3 {
-  font-size: 1.7vw;
+  font-size: 1.4vw;
 }
 nav h3:hover {
   padding-bottom: 1vw;
@@ -69,9 +69,13 @@ nav h3:hover {
   border: none;
   background-color: transparent;
   color: black;
-  font-size: 3vw;
+  font-size: 2.5vw;
   font-weight: 550;
   cursor: pointer;
+}
+#addtocart a {
+  color: black;
+  text-decoration: none;
 }
 .toggle-bars {
   background-color: transparent;
@@ -188,7 +192,7 @@ main #banner-img img {
 .items:hover {
   background-color: #60181c;
   color: white;
-  .icons-btn {
+  .cart-icons-btn {
     background-color: white;
   }
   .icon {
@@ -198,7 +202,7 @@ main #banner-img img {
 #discount-banner:hover {
   background-color: transparent;
 }
-.icons-btn {
+.cart-icons-btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -342,12 +346,12 @@ footer h3 {
     border: none;
     background-color: transparent;
     color: black;
-    font-size: 7.5vw;
+    font-size: 6.5vw;
     font-weight: 550;
     cursor: pointer;
     z-index: 1;
     position: absolute;
-    top: 18px;
+    top: 21px;
     right: 80px;
   }
   .toggle-bars {
@@ -383,7 +387,7 @@ footer h3 {
   #product-price {
     font-size: 1.3vw;
   }
-  .icons-btn {
+  .cart-icons-btn {
     width: 15px;
     height: 15px;
     padding: 5px;

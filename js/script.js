@@ -58,7 +58,7 @@ products.forEach((product, index) => {
               <h5 id="product-title">${product.name}</h5>
               <p id="product-price">$${product.price.toFixed(2)}</p>
             </div>
-            <button class="icons-btn">
+            <button class="cart-icons-btn">
               <i class="ri-shopping-cart-2-line icon"></i>
             </button>
           </div>
@@ -68,6 +68,10 @@ products.forEach((product, index) => {
 const productcartEL = document.querySelector(".product-cart");
 productcartEL.innerHTML = itemhtml;
 
-document.querySelectorAll(".icons-btn").forEach((btn) => {
-  btn.addEventListener("click", () => {});
+// cart btn
+
+document.querySelectorAll(".cart-icons-btn").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    console.log("added");
+  });
 });

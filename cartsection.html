@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout</title>
+    <link rel="stylesheet" href="css/cartsection.css" />
+    <link rel="icon" href="images/Christmas Luxe .png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <img src="images/Christmas Luxe .png" />
+      <button id="shipping-btn">
+        <i class="ri-truck-line"></i>
+        <span id="shipping-btn-txt">Track Shipping</span>
+      </button>
+    </header>
+    <main>
+      <div class="checkout-box">
+      <div class="checkout-box-title">
+        <h2>Review your order</h2>
+      </div>
+        <div class="product-detail-box">
+          <div class="order-list">
+            <div class="delivery-date">
+              <h3>Delivery date: Tuesday, December 9</h3>
+            </div>
+            <div class="product-section">
+              <div class="product-img box">
+                <img src="images/mainproducts/p8.jpg" alt="x mas - box" />
+              </div>
+              <div class="product-info box">
+                <h4>Real Artificial Christmas Tree</h4>
+                <p id="product-info-price">$438.99</p>
+                <div class="quantity">
+                  Quantity:
+                  <!-- <span>14</span> -->
+                  <input id="quantity-input" type="number">
+                  <span>Update</span>
+                  <span>Delete</span>
+                </div>
+              </div>
+              <div class="product-delivery-option box">
+                <div class="product-delivery-option-title">
+                  <h3>Choose a delivery option:</h3>
+                </div>
+                <form>
+                  <label>
+                <div class="option">
+                  <div class="radio-btn">
+                    <input type="radio" name="delivery" id="radio" />
+                  </div>
+                  <div class="shipping-option">
+                    <h4>Wednesday, December 10</h4>
+                    <p>Free Shipping</p>
+                  </div>
+                </div>
+                </label>
+                <label>
+                <div class="option">
+                  <div class="radio-btn">
+                    <input type="radio" name="delivery" id="radio" />
+                  </div>
+                  <div class="shipping-option">
+                    <h4>Thursday, December 4</h4>
+                    <p>$4.99 - Shipping</p>
+                  </div>
+                </div>
+                </label>
+                <label>
+                <div class="option">
+                  <div class="radio-btn">
+                    <input type="radio" name="delivery" id="radio" />
+                  </div>
+                  <div class="shipping-option">
+                    <h4>Tuesday, December 2</h4>
+                    <p>$9.99 - Shipping</p>
+                  </div>
+                  </label>
+                </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="order-summary">
+            <div class="order-summary-title"><h3>Order Summary</h3></div>
+           <div class="order-detail">
+            <div class="order-item">
+              <p>Items (14):</p>
+              <p>$152.60</p>
+            </div>
+            <div class="order-shipping-price">
+              <p>Shipping & handling:</p>
+              <p>$9.99</p>
+            </div>
+            <div class="order-before-tax">
+              <p>Total before tax:</p>
+              <p>$162.59</p>
+            </div>
+            <div class="order-after-tax">
+              <p>Estimated tax (10%):</p>
+              <p>$16.26</p>
+            </div>
+           </div>
+           <div class="order-total-price">
+            <div class="total-price">
+              <h3>Total:</h3>
+              <b>$178.85</b>
+            </div>
+            <div class="place-order">
+              <button>Place your order</button>
+            </div>
+           </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
