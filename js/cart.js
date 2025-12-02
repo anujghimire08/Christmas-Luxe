@@ -1,19 +1,26 @@
-export const cart = [
-  {
-    id: "p1",
-    quantity: 1,
-  },
-   {
-    id: "p2",
-    quantity: 1,
-  },
-];
+export let cart = JSON.parse(localStorage.getItem("cart"));
+if (!cart) {
+  cart = [
+    {
+      id: "p1",
+      quantity: 1,
+    },
+    {
+      id: "p2",
+      quantity: 1,
+    },
+  ];
+}
 
-export function addtoCart(productID) {
+function saveOrderData() {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+export function addtoCart(productId) {
   let itemCheck;
 
   cart.forEach((item) => {
-    if (productID === item.productID) {
+    if (productId === item.id) {
       itemCheck = item;
     }
   });
@@ -22,8 +29,21 @@ export function addtoCart(productID) {
     itemCheck.quantity += 1;
   } else {
     cart.push({
-      productID: productID,
+      id: productId,
       quantity: 1,
     });
   }
+  saveOrderData();
+}
+
+export function DeleteOrderItem(productId) {
+  let caryarr = [];
+  cart.forEach((cartItem) => {
+    if (cartItem.id !== productId) {
+      caryarr.push(cartItem);
+    }
+  });
+
+  cart = caryarr;
+  saveOrderData();
 }
