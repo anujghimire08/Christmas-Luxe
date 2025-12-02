@@ -8,41 +8,49 @@ togglebarsEL.addEventListener("click", () => {
 
 const products = [
   {
+    id: "p1",
     picture: "images/mainproducts/p1.jpg",
     name: "Christmas Tree",
     price: 645.56,
   },
   {
+    id: "p2",
     picture: "images/mainproducts/p2.jpg",
     name: "Lighted Snowman Decoration",
     price: 46.0,
   },
   {
+    id: "p3",
     picture: "images/mainproducts/p3.jpg",
     name: "LED House Christmas Lights",
     price: 14.99,
   },
   {
+    id: "p4",
     picture: "images/mainproducts/p4.jpg",
     name: "Door Christmas Wreath",
     price: 110.0,
   },
   {
+    id: "p5",
     picture: "images/mainproducts/p5.jpg",
     name: "Santa Costume for Men 9Pcs",
     price: 185.0,
   },
   {
+    id: "p6",
     picture: "images/mainproducts/p6.jpg",
     name: "Jingle Bells Hanging Decor",
     price: 59.99,
   },
   {
+    id: "p7",
     picture: "images/mainproducts/p7.jpg",
     name: "Santa Vintage Truck",
     price: 30.0,
   },
   {
+    id: "p8",
     picture: "images/mainproducts/p8.jpg",
     name: "Real Artificial Christmas Tree",
     price: 438.99,
@@ -58,9 +66,10 @@ products.forEach((product, index) => {
               <h5 id="product-title">${product.name}</h5>
               <p id="product-price">$${product.price.toFixed(2)}</p>
             </div>
-            <button class="cart-icons-btn">
-              <i class="ri-shopping-cart-2-line icon"></i>
+            <button class="cart-icons-btn" data-product-id="${product.id}">
+            <i class="ri-shopping-cart-2-line icon"></i>
             </button>
+
           </div>
         </div>
   `;
@@ -69,9 +78,40 @@ const productcartEL = document.querySelector(".product-cart");
 productcartEL.innerHTML = itemhtml;
 
 // cart btn
-
-document.querySelectorAll(".cart-icons-btn").forEach((btn) => {
+const cartBtn = document.querySelectorAll(".cart-icons-btn");
+cartBtn.forEach((btn) => {
   btn.addEventListener("click", () => {
-    console.log("added");
+    const productID = btn.dataset.productId;
+
+    let itemCheck;
+
+    cart.forEach((item) => {
+      if (productID === item.productID) {
+        itemCheck = item;
+      }
+    });
+
+    if (itemCheck) {
+      itemCheck.quantity += 1;
+    } else {
+      cart.push({
+        productID: productID,
+        quantity: 1,
+      });
+    }
+  });
+});
+
+const cartanchor = document.getElementById("cart-anchor");
+function flashCartColor() {
+  cartanchor.style.color = "#60181c";
+  setTimeout(() => {
+    cartanchor.style.color = "black";
+  }, 200);
+}
+
+cartBtn.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    flashCartColor();
   });
 });
