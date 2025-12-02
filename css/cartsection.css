@@ -79,7 +79,7 @@ main {
 
 .order-details {
   display: flex;
-  gap: 0.9vw;
+  justify-content: space-between;
   border: 1px solid grey;
   border-radius: 6px;
   padding: 1vw;
@@ -87,7 +87,7 @@ main {
 }
 
 .order-item-img img {
-  width: 200px;
+  width: 250px;
 }
 .order-item-detail {
   display: flex;
@@ -144,6 +144,10 @@ input[type="radio"] {
 .order-after-tax {
   display: flex;
   justify-content: space-between;
+}
+.order-after-tax{
+  border-bottom: 1px solid grey;
+  padding-bottom: 1vw;
 }
 .order-total-price {
   display: flex;

@@ -1,3 +1,5 @@
+import { cart, addtoCart } from "/js/cart.js";
+
 const togglebarsEL = document.querySelector(".toggle-bars");
 const navEL = document.querySelector("nav");
 
@@ -56,6 +58,7 @@ const products = [
     price: 438.99,
   },
 ];
+
 let itemhtml = "";
 products.forEach((product, index) => {
   itemhtml += `
@@ -74,35 +77,32 @@ products.forEach((product, index) => {
         </div>
   `;
 });
+
 const productcartEL = document.querySelector(".product-cart");
 productcartEL.innerHTML = itemhtml;
 
 // cart btn
 const cartBtn = document.querySelectorAll(".cart-icons-btn");
+
+function updateCartQuantity() {
+  // cart item quantity
+  let cartquantity = 0;
+  cart.forEach((item) => {
+    cartquantity += item.quantity;
+  });
+}
+
 cartBtn.forEach((btn) => {
   btn.addEventListener("click", () => {
     const productID = btn.dataset.productId;
-
-    let itemCheck;
-
-    cart.forEach((item) => {
-      if (productID === item.productID) {
-        itemCheck = item;
-      }
-    });
-
-    if (itemCheck) {
-      itemCheck.quantity += 1;
-    } else {
-      cart.push({
-        productID: productID,
-        quantity: 1,
-      });
-    }
+    addtoCart(productID);
+    updateCartQuantity();
   });
 });
 
+// cart icon flash
 const cartanchor = document.getElementById("cart-anchor");
+
 function flashCartColor() {
   cartanchor.style.color = "#60181c";
   setTimeout(() => {
