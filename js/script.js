@@ -1,14 +1,16 @@
-import { cart, addtoCart } from "/js/cart.js";
+import { cart, addtoCart } from "./cart.js";
 
 const togglebarsEL = document.querySelector(".toggle-bars");
 const navEL = document.querySelector("nav");
 
-togglebarsEL.addEventListener("click", () => {
-  togglebarsEL.classList.toggle("active");
-  navEL.classList.toggle("active");
-});
+if (togglebarsEL && navEL) {
+  togglebarsEL.addEventListener("click", () => {
+    togglebarsEL.classList.toggle("active");
+    navEL.classList.toggle("active");
+  });
+}
 
-const products = [
+export const products = [
   {
     id: "p1",
     picture: "images/mainproducts/p1.jpg",
@@ -59,59 +61,56 @@ const products = [
   },
 ];
 
-let itemhtml = "";
-products.forEach((product, index) => {
-  itemhtml += `
-          <div class="items">
-          <img src="images/mainproducts/p${index + 1}.jpg" />
-          <div class="cart-footer">
-            <div class="details-product">
-              <h5 id="product-title">${product.name}</h5>
-              <p id="product-price">$${product.price.toFixed(2)}</p>
-            </div>
-            <button class="cart-icons-btn" data-product-id="${product.id}">
-            <i class="ri-shopping-cart-2-line icon"></i>
-            </button>
-
-          </div>
-        </div>
-  `;
-});
-
 const productcartEL = document.querySelector(".product-cart");
-productcartEL.innerHTML = itemhtml;
+if (productcartEL) {
+  let itemhtml = "";
+  products.forEach((product, index) => {
+    itemhtml += `
+      <div class="items">
+        <img src="images/mainproducts/p${index + 1}.jpg" />
+        <div class="cart-footer">
+          <div class="details-product">
+            <h5 id="product-title">${product.name}</h5>
+            <p id="product-price">$${product.price.toFixed(2)}</p>
+          </div>
+          <button class="cart-icons-btn" data-product-id="${product.id}">
+            <i class="ri-shopping-cart-2-line icon"></i>
+          </button>
+        </div>
+      </div>
+    `;
+  });
+  productcartEL.innerHTML = itemhtml;
+}
 
-// cart btn
 const cartBtn = document.querySelectorAll(".cart-icons-btn");
+if (cartBtn.length) {
+  function updateCartQuantity() {
+    let cartquantity = 0;
+    cart.forEach((item) => {
+      cartquantity += item.quantity;
+    });
+  }
 
-function updateCartQuantity() {
-  // cart item quantity
-  let cartquantity = 0;
-  cart.forEach((item) => {
-    cartquantity += item.quantity;
+  cartBtn.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const productID = btn.dataset.productId;
+      addtoCart(productID);
+      updateCartQuantity();
+    });
   });
 }
 
-cartBtn.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const productID = btn.dataset.productId;
-    addtoCart(productID);
-    updateCartQuantity();
-  });
-});
-
-// cart icon flash
 const cartanchor = document.getElementById("cart-anchor");
+if (cartanchor && cartBtn.length) {
+  function flashCartColor() {
+    cartanchor.style.color = "#60181c";
+    setTimeout(() => {
+      cartanchor.style.color = "black";
+    }, 200);
+  }
 
-function flashCartColor() {
-  cartanchor.style.color = "#60181c";
-  setTimeout(() => {
-    cartanchor.style.color = "black";
-  }, 200);
-}
-
-cartBtn.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    flashCartColor();
+  cartBtn.forEach((btn) => {
+    btn.addEventListener("click", flashCartColor);
   });
-});
+}
