@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body,
+html {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  font-family: "Prompt", sans-serif;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  height: 70px;
+  width: 100%;
+  padding: 1vw;
+  border-bottom: 2px solid black;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  position: relative;
+}
+header img {
+  width: 5.2vw;
+}
+header #signup {
+  padding: 1vw 3vw;
+  border: none;
+  border-radius: 6px;
+  background-color: #60181c;
+  color: white;
+  font-size: 1.4vw;
+  font-weight: 550;
+}
+header #signup:hover {
+  background-color: #57171a;
+  cursor: pointer;
+}
+header #signup:active {
+  transform: scale(0.98);
+}
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3vw;
+}
+nav h3 {
+  font-size: 1.4vw;
+}
+nav h3:hover {
+  padding-bottom: 1vw;
+  border-bottom: 3px solid #60181c;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.leftSection {
+  display: flex;
+  gap: 3vw;
+}
+#addtocart {
+  border: none;
+  background-color: transparent;
+  color: black;
+  font-size: 2.5vw;
+  font-weight: 550;
+  cursor: pointer;
+}
+#addtocart a {
+  color: black;
+  text-decoration: none;
+}
+.toggle-bars {
+  background-color: transparent;
+  display: none;
+}
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: #60181c;
+}
+main {
+  width: 100%;
+  height: 100%;
+  margin-top: 2vw;
+}
+.product-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2vw;
+  padding-bottom: 2vw;
+}
+.product-cart .items {
+  width: 23vw;
+  height: auto;
+}
+.items img {
+  width: 100%;
+}
+.cart-btn-div {
+  width: 100%;
+}
+.cart-icons-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 30px;
+  background-color: #60181c;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  margin-top: 5px;
+  color: white;
+  font-weight: 600;
+}
+.cart-footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1vw;
+}
+
+#discount-banner:hover {
+  background-color: transparent;
+}
+
+.icon {
+  display: block;
+  font-size: 1.2rem;
+  color: white;
+}
+#product-title {
+  font-size: 1.2vw;
+}
+#product-price {
+  font-size: 1.5vw;
+}
+h2 {
+  text-align: center;
+  margin: 20px 0px 20px 0px;
+  color: #60181c;
+}
