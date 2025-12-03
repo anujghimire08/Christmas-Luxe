@@ -84,9 +84,9 @@ if (productcartEL) {
 }
 
 const cartBtn = document.querySelectorAll(".cart-icons-btn");
+let cartquantity = 0;
 
 function updateCartQuantity() {
-  const cartquantity = 0;
   cart.forEach((item) => {
     cartquantity += item.quantity;
   });

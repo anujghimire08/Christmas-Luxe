@@ -1,5 +1,5 @@
-import { cart, DeleteOrderItem } from "/js/cart.js";
-import { products } from "/js/script.js";
+import { cart, DeleteOrderItem } from "./cart.js";
+import { products } from "./script.js";
 
 let orderListHtml = "";
 
@@ -14,7 +14,7 @@ cart.forEach((cartItem) => {
     }
   });
 
-  if (!itemmatch) return; 
+  if (!itemmatch) return;
 
   orderListHtml += `
   <div class="order-details js-cartitem-${itemmatch.id}">
