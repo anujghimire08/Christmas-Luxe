@@ -10,6 +10,17 @@ if (togglebarsEL && navEL) {
   });
 }
 
+export function getProduct(productId) {
+  let itemmatch;
+
+  products.forEach((product) => {
+    if (product.id === productId) {
+      itemmatch = product;
+    }
+  });
+  return itemmatch;
+}
+
 export const products = [
   {
     id: "p1",
