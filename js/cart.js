@@ -4,10 +4,12 @@ if (!cart) {
     {
       id: "p1",
       quantity: 1,
+      deliveryOptionsId:"1",
     },
     {
       id: "p2",
       quantity: 1,
+      deliveryOptionsId:"2",
     },
   ];
 }
@@ -31,6 +33,7 @@ export function addtoCart(productId) {
     cart.push({
       id: productId,
       quantity: 1,
+      deliveryOptionsId: "1"
     });
   }
   saveOrderData();

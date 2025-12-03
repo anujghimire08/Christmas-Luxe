@@ -86,7 +86,7 @@ if (productcartEL) {
 const cartBtn = document.querySelectorAll(".cart-icons-btn");
 let cartquantity = 0;
 
-function updateCartQuantity() {
+export function updateCartQuantity() {
   cart.forEach((item) => {
     cartquantity += item.quantity;
   });
